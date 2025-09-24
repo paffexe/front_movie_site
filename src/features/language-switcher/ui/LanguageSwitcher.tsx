@@ -53,16 +53,21 @@ export const LanguageSwitcher: React.FC = memo(() => {
   };
 
   return (
-    <Dropdown menu={{ ...menuProps, onClick: handleMenuClick }}>
+    <Dropdown
+      menu={{
+        ...menuProps,
+        onClick: handleMenuClick,
+        className: "custom-dropdown-menu",
+      }}
+    >
       <Button
         style={{
-          width: "120",
-          backgroundColor: "black",
-          color: "white",
-          border: "none",
+          width: "135px",
+          color: "black",
         }}
+        className="custom-btn"
       >
-        <Space style={{ backgroundColor: "black" }}>
+        <Space>
           {language.icon}
           {language.label}
           <DownOutlined />

@@ -21,7 +21,7 @@ export const Navigation = memo(() => {
           to={"/"}
           className={({ isActive }) =>
             `flex flex-col items-center ${
-              isActive ? "text-[#FF5722]" : "text-[#A1A1A1]"
+              isActive ? "text-[#C61F1F]" : "text-[#A1A1A1]"
             }`
           }
         >
@@ -41,7 +41,7 @@ export const Navigation = memo(() => {
           to={"/movie"}
           className={({ isActive }) =>
             `flex flex-col items-center ${
-              isActive ? "text-[#FF5722]" : "text-[#A1A1A1]"
+              isActive ? "text-[#C61F1F]" : "text-[#A1A1A1]"
             }`
           }
         >
@@ -61,7 +61,7 @@ export const Navigation = memo(() => {
           to={"/movie"}
           className={({ isActive }) =>
             `flex flex-col items-center ${
-              isActive ? "text-[#FF5722]" : "text-[#A1A1A1]"
+              isActive ? "text-[#C61F1F]" : "text-[#A1A1A1]"
             }`
           }
         >
@@ -81,7 +81,7 @@ export const Navigation = memo(() => {
           to={"/movie"}
           className={({ isActive }) =>
             `flex flex-col items-center ${
-              isActive ? "text-[#FF5722]" : "text-[#A1A1A1]"
+              isActive ? "text-[#C61F1F]" : "text-[#A1A1A1]"
             }`
           }
         >

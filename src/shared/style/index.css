@@ -2,12 +2,70 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-.container{
-    max-width: 1180px;
-    width: 100%;
-    gap: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 12px;
-    padding-right: 12px;
+html, body {
+  background-color: white;
+}
+
+html.dark, html.dark body {
+  background-color: black; 
+}
+
+.custom-switch.ant-switch:hover {
+  background-color: #c61f1f !important;
+}
+
+.custom-switch.ant-switch-checked {
+  background-color: #c61f1f;
+}
+
+.custom-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: white !important;
+  color: #c61f1f !important;
+  border: 1px solid #c61f1f !important;
+}
+
+html.dark .custom-btn {
+  background-color: #1d1d1d80;
+  color: white !important;
+  border: 1px solid transparent;
+}
+
+html.dark .custom-btn:hover {
+  background-color: #1d1d1d80 !important;
+  color: white !important;
+  border: 1px solid #c61f1f !important;
+}
+
+.custom-dropdown-menu {
+  background-color: white;
+  color: black;
+  border: 1px solid #eaeaea;
+  transition: all 0.3s ease;
+}
+
+html.dark .custom-dropdown-menu {
+  background-color: #333;
+  color: white !important;
+  border: 1px solid #333;
+}
+
+html.dark .custom-dropdown-menu .ant-dropdown-menu-item:hover {
+  background-color: #1d1d1d80;
+  color: #fff;
+}
+.container {
+  max-width: 1180px;
+  width: 100%;
+  gap: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
 }
