@@ -1,19 +1,18 @@
-import { Select, type SelectProps } from "antd";
-import type { SearchProps } from "antd/es/input";
+import { Select, } from "antd";
+// import type { SearchProps } from "antd/es/input";
 import { memo } from "react";
-import { useSearchParams } from "react-router-dom";
+// import { useSearchParams } from "react-router-dom";
 
 
-interface Props {}
 
 export const MovieSort = memo(() => {
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
-  const onSearch: SearchProps["onSearch"] = (s)=> {
-    searchParams.set("sortBy", s.toString())
-    setSearchParams
-  }
+  // const onSearch: SearchProps["onSearch"] = (s)=> {
+  //   searchParams.set("sortBy", s.toString())
+  //   setSearchParams
+  // }
 
   return (
     <div className="container">
