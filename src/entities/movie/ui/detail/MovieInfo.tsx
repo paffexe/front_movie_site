@@ -14,26 +14,54 @@ export const MovieInfo: FC<Props> = memo((props) => {
   const { data: imageData } = getMovieInfo(id, "images");
 
   return (
-    <div>
-      <section>
-        <img src={createImageUrl(data?.backdrop_path)} alt="" />
+    <div className="w-full">
+      <section className="relative w-full h-[400px] md:h-[500px] lg:h-[600px]">
+        <img
+          src={createImageUrl(data?.backdrop_path)}
+          alt={data?.title}
+          className="w-full h-full object-cover rounded-b-2xl"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+          <h1 className="text-white text-4xl md:text-5xl font-bold px-6 pb-8">
+            {data?.title}
+          </h1>
+        </div>
       </section>
-      <section className="container">
-        <h1 className="text-3xl">{data?.title}</h1>
-        <p>{data?.budget?.toLocaleString()} USD</p>
-        <a href={data?.homepage} target="_blank">
-          Link
-        </a>
+
+      <section className="container mx-auto py-8 px-4">
+        <div className="flex flex-col gap-4">
+          <p className="text-lg text-gray-700 dark:text-gray-300">
+            Budget:{" "}
+            <span className="font-semibold text-green-600">
+              {data?.budget?.toLocaleString()} USD
+            </span>
+          </p>
+          {data?.homepage && (
+            <a
+              href={data.homepage}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block w-fit px-4 py-2 bg-red-600 text-white rounded-md shadow hover:bg-red-700 transition"
+            >
+              Visit Homepage
+            </a>
+          )}
+        </div>
       </section>
-      <section className="flex overflow-x-auto container">
-        {imageData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (
-          <Image
-            key={inx}
-            className="min-w-[200px]"
-            src={createImageUrl(item.file_path)}
-            alt=""
-          />
-        ))}
+
+      <section className="container mx-auto px-4 pb-10">
+        <h2 className="text-2xl font-semibold mb-4">Gallery</h2>
+        <div className="flex overflow-x-auto gap-3 pb-3 scrollbar-thin scrollbar-thumb-gray-400">
+          {imageData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (
+            <Image
+              key={inx}
+              className="min-w-[200px] rounded-lg shadow"
+              src={createImageUrl(item.file_path)}
+              alt=""
+              preview={true}
+            />
+          ))}
+        </div>
       </section>
     </div>
   );

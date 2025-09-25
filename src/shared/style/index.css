@@ -2,14 +2,17 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-html, body {
+html,
+body {
   background-color: white;
 }
 
-html.dark, html.dark body {
-  background-color: black; 
+html.dark,
+html.dark body {
+  background-color: black;
 }
 
+/* header section*/
 .custom-switch.ant-switch:hover {
   background-color: #c61f1f !important;
 }
@@ -61,11 +64,30 @@ html.dark .custom-dropdown-menu .ant-dropdown-menu-item:hover {
   color: #fff;
 }
 
+/*header end*/
+
+/*hero start*/
 .mySwiper2 {
   --swiper-navigation-color: #fff;
   --swiper-pagination-color: #fff;
 }
 
+html.dark
+.swiper-button-next,
+html.dark
+.swiper-button-prev {
+  color: #c61f1f !important; 
+  font-size: 20px !important; 
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 50%;
+}
+
+/*hero end*/
 
 .container {
   max-width: 1180px;

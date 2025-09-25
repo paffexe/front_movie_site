@@ -1,7 +1,6 @@
 import { useState, memo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -36,7 +35,7 @@ export const Hero = memo(() => {
                 alt={movie.title}
                 style={{
                   width: "100%",
-                  height: "300px",
+                  height: "640px",
                   objectFit: "cover",
                   borderRadius: "10px",
                 }}
@@ -45,30 +44,33 @@ export const Hero = memo(() => {
           ))}
         </Swiper>
       </div>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
-      >
-        {data?.results?.slice(0, 6).map((movie: IMovie) => (
-          <SwiperSlide key={movie.id}>
-            <img
-              src={`${imageBase}${createImageUrl(movie.poster_path)}`}
-              alt={movie.title}
-              style={{
-                width: "100%",
-                height: "120px",
-                objectFit: "cover",
-                borderRadius: "6px",
-              }}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="rounded-lg p-2 transition-shadow duration-300 hover:shadow-lg hover:shadow-red-500/50 dark:hover:shadow-slate-700/60">
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          spaceBetween={10}
+          slidesPerView={4}
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="mySwiper"
+          style={{ width: "900px" }}
+        >
+          {data?.results?.slice(0, 6).map((movie: IMovie) => (
+            <SwiperSlide key={movie.id}>
+              <img
+                src={`${imageBase}${createImageUrl(movie.poster_path)}`}
+                alt={movie.title}
+                style={{
+                  width: "100%",
+                  height: "120px",
+                  objectFit: "cover",
+                  borderRadius: "6px",
+                }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 });
