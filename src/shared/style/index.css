@@ -60,6 +60,13 @@ html.dark .custom-dropdown-menu .ant-dropdown-menu-item:hover {
   background-color: #1d1d1d80;
   color: #fff;
 }
+
+.mySwiper2 {
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+}
+
+
 .container {
   max-width: 1180px;
   width: 100%;

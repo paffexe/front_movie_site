@@ -3,7 +3,8 @@ export interface IMovie {
   title: string;
   poster_path: string;
   vote_average: number;
-  release_date: string
+  release_date: string;
+  backdrop_path: string;
 }
 
 export interface IMovieParams {
