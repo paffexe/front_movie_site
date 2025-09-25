@@ -5,7 +5,7 @@ import { RiLoginCircleFill } from "react-icons/ri";
 
 export const Option = memo(() => {
   return (
-    <div className="flex items-center gap-x-2 w-[292px]">
+    <div className="flex items-center gap-x-2 w-auto md:w-[292px]">
       <LanguageSwitcher />
       <div className="w-[50px] flex justify-center">
         <ThemeChanger />

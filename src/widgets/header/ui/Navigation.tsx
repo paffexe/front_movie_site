@@ -15,7 +15,7 @@ import searchD from "../assets/search_dis.svg";
 
 export const Navigation = memo(() => {
   return (
-    <ul className="flex gap-[38px] ">
+    <ul className="flex gap-[38px] md:gap-[38px] justify-around md:justify-center py-2 md:py-0">
       <li>
         <NavLink
           to={"/"}
@@ -30,8 +30,9 @@ export const Navigation = memo(() => {
               <img
                 src={isActive ? showtimeA : showTimeD}
                 className="w-6 h-6 mb-1.5"
+                alt="Showtime"
               />
-              <span>Showtime</span>
+              <span className="text-xs md:text-base">Showtime</span>
             </>
           )}
         </NavLink>
@@ -50,8 +51,9 @@ export const Navigation = memo(() => {
               <img
                 src={isActive ? sessionA : sessionD}
                 className="w-6 h-6 mb-1.5"
+                alt="Session"
               />
-              <span>Session</span>
+              <span className="text-xs md:text-base">Session</span>
             </>
           )}
         </NavLink>
@@ -70,8 +72,9 @@ export const Navigation = memo(() => {
               <img
                 src={isActive ? ticketA : ticketD}
                 className="w-6 h-6 mb-1.5"
+                alt="Tickets"
               />
-              <span>Tickets</span>
+              <span className="text-xs md:text-base">Tickets</span>
             </>
           )}
         </NavLink>
@@ -90,8 +93,9 @@ export const Navigation = memo(() => {
               <img
                 src={isActive ? searchA : searchD}
                 className="w-6 h-6 mb-1.5"
+                alt="Search"
               />
-              <span>Search</span>
+              <span className="text-xs md:text-base">Search</span>
             </>
           )}
         </NavLink>
