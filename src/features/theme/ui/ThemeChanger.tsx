@@ -4,6 +4,7 @@ import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 
 export const ThemeChanger = memo(() => {
   const [darkMode, setDarkMode] = useState(false);
+  const [showIcon, setShowIcon] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -25,6 +26,10 @@ export const ThemeChanger = memo(() => {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+
+    setShowIcon(false);
+
+    setTimeout(() => setShowIcon(true), 200);
   };
 
   return (
@@ -32,8 +37,12 @@ export const ThemeChanger = memo(() => {
       <Switch
         className="custom-switch"
         checked={darkMode}
-        checkedChildren={<MoonOutlined />}
-        unCheckedChildren={<SunOutlined />}
+        checkedChildren={
+          showIcon ? <MoonOutlined style={{ fontSize: 16 }} /> : null
+        }
+        unCheckedChildren={
+          showIcon ? <SunOutlined style={{ fontSize: 16 }} /> : null
+        }
         onChange={handleChange}
         style={{ width: "50px" }}
       />
