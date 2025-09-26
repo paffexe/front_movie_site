@@ -2,6 +2,7 @@ import { memo, type FC } from "react";
 import { useMovie } from "../../model/useMovie";
 import { createImageUrl } from "@/shared/utils";
 import { Image } from "antd";
+import { Link } from "react-router-dom";
 
 interface Props {
   id: string;
@@ -12,6 +13,8 @@ export const MovieInfo: FC<Props> = memo((props) => {
   const { getMovieById, getMovieInfo } = useMovie();
   const { data } = getMovieById(id);
   const { data: imageData } = getMovieInfo(id, "images");
+
+  console.log(data);
 
   return (
     <div className="w-full">
@@ -61,6 +64,29 @@ export const MovieInfo: FC<Props> = memo((props) => {
               preview={true}
             />
           ))}
+        </div>
+      </section>
+
+      <section className="container mt-8">
+        <div className="flex gap-4 border-b border-gray-300 dark:border-gray-700">
+          <Link
+            to={""}
+            className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#c61f1f] border-b-2 border-transparent hover:border-[#c61f1f] transition-colors"
+          >
+            Reviews
+          </Link>
+          <Link
+            to={"cast"}
+            className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#c61f1f] border-b-2 border-transparent hover:border-[#c61f1f] transition-colors"
+          >
+            Cast
+          </Link>
+          <Link
+            to={"crew"}
+            className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#c61f1f] border-b-2 border-transparent hover:border-[#c61f1f] transition-colors"
+          >
+            Crew
+          </Link>
         </div>
       </section>
     </div>

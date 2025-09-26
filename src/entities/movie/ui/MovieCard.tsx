@@ -13,7 +13,7 @@ export const MovieCard: FC<Props> = memo(({ movie }) => {
   return (
     <div
       onClick={() => navigate(`/movie/${movie.id}`)}
-      className="bg-white dark:bg-slate-900 rounded-xl shadow-md hover:shadow-xl cursor-pointer transition-transform hover:-translate-y-1"
+      className="bg-white dark:bg-slate-900 rounded-xl shadow-md hover:shadow-xl cursor-pointer transition-transform hover:-translate-y-1 mb-5"
     >
       <div className="overflow-hidden rounded-t-xl">
         <img

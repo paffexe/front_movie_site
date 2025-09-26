@@ -38,10 +38,18 @@ export const ThemeChanger = memo(() => {
         className="custom-switch"
         checked={darkMode}
         checkedChildren={
-          showIcon ? <MoonOutlined style={{ fontSize: 16 }} /> : null
+          showIcon ? (
+            <MoonOutlined style={{ fontSize: 16 }} />
+          ) : (
+            <MoonOutlined style={{ fontSize: 16 }} />
+          )
         }
         unCheckedChildren={
-          showIcon ? <SunOutlined style={{ fontSize: 16 }} /> : null
+          showIcon ? (
+            <SunOutlined style={{ fontSize: 16 }} />
+          ) : (
+            <SunOutlined style={{ fontSize: 16 }} />
+          )
         }
         onChange={handleChange}
         style={{ width: "50px" }}
