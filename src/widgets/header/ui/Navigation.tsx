@@ -39,7 +39,7 @@ export const Navigation = memo(() => {
       </li>
       <li>
         <NavLink
-          to={"/session"}
+          to={"/movie"}
           className={({ isActive }) =>
             `flex flex-col items-center ${
               isActive ? "text-[#C61F1F]" : "text-[#A1A1A1]"
@@ -53,7 +53,7 @@ export const Navigation = memo(() => {
                 className="w-6 h-6 mb-1.5"
                 alt="Session"
               />
-              <span className="text-xs md:text-base">Session</span>
+              <span className="text-xs md:text-base">Movies</span>
             </>
           )}
         </NavLink>

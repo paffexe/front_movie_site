@@ -8,17 +8,24 @@ import MovieSort from "../../../features/movie-sort";
 export const Movie = memo(() => {
   const { getMovies } = useMovie();
   const [searchParams] = useSearchParams();
+
   const page = searchParams.get("page") ?? "1";
-  const { data } = getMovies({ page: page as string });
+  const sort_by = searchParams.get("sort") ?? "popularity.desc";
+  const with_genres = searchParams.get("genres") ?? "Animation";
+  const fromDate = searchParams.get("from") ?? "";
+  const toDate = searchParams.get("to") ?? "";
+
+  const { data } = getMovies({ page, sort_by, with_genres, fromDate, toDate });
+
+  console.log(data);
 
   return (
     <div>
-      <div className="container">
-        <h2>Total: {data?.total_results?.toLocaleString()}</h2>
+      <div className="container mb-[30px]">
+        <MovieSort />
       </div>
-      <MovieSort />
       <MovieList movies={data?.results} />
-      <MoviePagination page={page} total_pages={data?.total_results} />
+      <MoviePagination page={page} total_pages={data?.total_pages} />
     </div>
   );
 });

@@ -72,12 +72,10 @@ html.dark .custom-dropdown-menu .ant-dropdown-menu-item:hover {
   --swiper-pagination-color: #fff;
 }
 
-html.dark
-.swiper-button-next,
-html.dark
-.swiper-button-prev {
-  color: #c61f1f !important; 
-  font-size: 20px !important; 
+html.dark .swiper-button-next,
+html.dark .swiper-button-prev {
+  color: #c61f1f !important;
+  font-size: 20px !important;
   width: 44px !important;
   height: 44px !important;
   display: flex !important;
@@ -88,6 +86,86 @@ html.dark
 }
 
 /*hero end*/
+
+/* Common style */
+.selectClass {
+  border-radius: 8px !important;
+  padding: 4px 8px !important;
+  transition: all 0.3s ease;
+}
+
+.select-small {
+  width: 180px !important;
+}
+
+.select-large {
+  width: 220px !important;
+}
+
+/* Light mode */
+.selectClass .ant-select-selector,
+.selectClass.ant-picker {
+  background-color: white !important;
+  border: 1px solid #ccc !important;
+  color: #1d1d1d !important;
+}
+
+.selectClass .ant-select-arrow,
+.selectClass .ant-picker-suffix {
+  color: #c61f1f !important;
+}
+
+/* Hover / active */
+.selectClass:hover .ant-select-selector,
+.selectClass:hover.ant-picker {
+  border-color: #c61f1f !important;
+}
+
+.btn:hover {
+  background-color: #fff !important;
+  border: 1px solid #c61f1f !important;
+  color: #c61f1f !important;
+}
+.dark .btn {
+  background-color: #1d1d1d;
+  color: white;
+  border: 1px solid#444;
+}
+
+.dark .btn:hover {
+  background-color: #1d1d1d !important;
+  color: white !important;
+  border: 1px solid #c61f1f !important;
+}
+/* Dark mode */
+.dark .selectClass .ant-select-selector,
+.dark .selectClass.ant-picker {
+  background-color: rgba(29, 29, 29, 0.5) !important;
+  border: 1px solid #444 !important;
+  color: #eaeaea !important;
+}
+
+.dark .selectClass .ant-select-arrow,
+.dark .selectClass .ant-picker-suffix {
+  color: #c61f1f !important;
+}
+
+.dark .selectClass:hover .ant-select-selector,
+.dark .selectClass:hover.ant-picker {
+  border-color: #c61f1f !important;
+}
+
+/* Light mode placeholder */
+.selectClass .ant-picker-input > input::placeholder {
+  color: #888 !important;
+}
+
+/* Dark mode placeholder */
+.dark .selectClass .ant-picker-input > input::placeholder {
+  color: #bbb !important;
+}
+
+/*common end*/
 
 .container {
   max-width: 1180px;

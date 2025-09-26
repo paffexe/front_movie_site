@@ -4,7 +4,6 @@ import MainLayout from "../layout/MainLayout";
 const Home = lazy(() => import("@/pages/home"));
 const Movie = lazy(() => import("@/pages/movie"));
 const Search = lazy(() => import("@/pages/search"));
-const Session = lazy(() => import("@/pages/session"));
 const Tickets = lazy(() => import("@/pages/tickets"));
 
 const MovieDetail = lazy(() => import("@/pages/movie-detail"));
@@ -19,9 +18,8 @@ const AppRouter = () => {
       element: <MainLayout />,
       children: [
         { path: "", element: <Home /> },
-        { path: "/movie", element: <Movie /> },
         { path: "/search", element: <Search /> },
-        { path: "/session", element: <Session /> },
+        { path: "/movie", element: <Movie /> },
         { path: "/tickets", element: <Tickets /> },
 
         {

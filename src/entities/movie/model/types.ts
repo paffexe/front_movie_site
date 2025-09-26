@@ -9,4 +9,8 @@ export interface IMovie {
 
 export interface IMovieParams {
   page: string;
+  sort_by?: string;
+  fromDate?: string;
+  toDate?: string;
+  with_genres?: string;
 }

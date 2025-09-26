@@ -1,30 +1,82 @@
-import { Select, } from "antd";
-// import type { SearchProps } from "antd/es/input";
+import { Select, DatePicker, Button } from "antd";
 import { memo } from "react";
-// import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import dayjs from "dayjs";
+import { useMovie } from "@/entities/movie";
 
-
+const { RangePicker } = DatePicker;
 
 export const MovieSort = memo(() => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { getMovieGenre } = useMovie();
 
-  // const [searchParams, setSearchParams] = useSearchParams();
+  const sort_by = searchParams.get("sort") ?? "popularity.desc";
+  const with_genres = searchParams.get("genres") ?? "Animation";
+  const fromDate = searchParams.get("from") ?? "";
+  const toDate = searchParams.get("to") ?? "";
 
-  // const onSearch: SearchProps["onSearch"] = (s)=> {
-  //   searchParams.set("sortBy", s.toString())
-  //   setSearchParams
-  // }
+  const { data: genreData } = getMovieGenre();
+
+  const sortOptions = [
+    { value: "popularity.desc", label: "Most popular" },
+    { value: "primary_release_date.asc", label: "Oldest" },
+    { value: "primary_release_date.desc", label: "Newest" },
+    { value: "vote_average.desc", label: "Highest rated" },
+  ];
+
+  const handleSortChange = (value: string) => {
+    searchParams.set("sort", value);
+    searchParams.set("page", "1");
+    setSearchParams(searchParams);
+  };
+
+  const handleGenreChange = (value: string) => {
+    searchParams.set("genres", value);
+    searchParams.set("page", "1");
+    setSearchParams(searchParams);
+  };
+
+  const handleDateChange = (dates: any) => {
+    if (dates) {
+      searchParams.set("from", dayjs(dates[0]).format("YYYY-MM-DD"));
+      searchParams.set("to", dayjs(dates[1]).format("YYYY-MM-DD"));
+    } else {
+      searchParams.delete("from");
+      searchParams.delete("to");
+    }
+    searchParams.set("page", "1");
+    setSearchParams(searchParams);
+  };
 
   return (
-    <div className="container">
+    <div className="flex gap-4">
       <Select
-        className="w-60"
+        className="selectClass select-small"
         placeholder="Sort by"
-        options={[
-          { value: "popularity.desc", label: "Popuplar" },
-          { value: "vote_average.asc", label: "Vote -" },
-          { value: "vote_average.desc", label: "Vote +" },
-        ]}
+        value={sort_by}
+        onChange={handleSortChange}
+        options={sortOptions}
       />
+
+      <Select
+        className="selectClass select-large"
+        placeholder="Select a genre"
+        value={with_genres || "Action"}
+        onChange={handleGenreChange}
+        options={genreData?.genres?.map((g: any) => ({
+          value: g.id.toString(),
+          label: g.name,
+        }))}
+      />
+
+      <RangePicker
+        value={fromDate && toDate ? [dayjs(fromDate), dayjs(toDate)] : null}
+        onChange={handleDateChange}
+        className="selectClass"
+      />
+      <Button onClick={() => handleDateChange(null)} className="selectClass btn">
+        Reset Dates
+      </Button>
     </div>
   );
 });
