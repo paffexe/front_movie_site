@@ -11,8 +11,6 @@ export const ReviewsView: FC<Props> = memo((props) => {
   const { getReview } = useReviw();
   const { data } = getReview(id);
 
-  console.log(data?.results);
-
   const reviews = data?.results ?? [];
 
   return (
