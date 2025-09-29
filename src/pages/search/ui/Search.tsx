@@ -1,9 +1,10 @@
 import { memo } from "react";
+import { SearchMovie } from "@/features/search-movie";
 
 export const Search = memo(() => {
   return (
     <div>
-      <h3>Search page</h3>
+      <SearchMovie />
     </div>
   );
 });
