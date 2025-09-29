@@ -87,5 +87,9 @@
     "empty": "Sizning xatcho‘plar ro‘yxatingiz bo‘sh",
     "startAdding": "Filmlarni qo‘shib, bu yerda saqlashni boshlang",
     "recommendations": "Sizga yoqishi mumkin bo‘lgan filmlar"
+  },
+  "login": {
+    "title": "Akkauntga kiring",
+    "desc": "Shaxsiy kino panelingizga kirish uchun Google orqali davom eting."
   }
 }

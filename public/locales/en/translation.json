@@ -87,5 +87,9 @@
     "empty": "Your bookmark list is empty",
     "startAdding": "Start adding movies to keep them here",
     "recommendations": "Movies you may like"
+  },
+  "login": {
+    "title": "Sign in to Your Account",
+    "desc": " Continue with Google to access your personalized movie dashboard."
   }
 }

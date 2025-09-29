@@ -11,6 +11,7 @@ const MovieDetail = lazy(() => import("@/pages/movie-detail"));
 const Review = lazy(() => import("@/pages/movie-detail/reviews"));
 const Cast = lazy(() => import("@/pages/movie-detail/cast"));
 const Crew = lazy(() => import("@/pages/movie-detail/crew"));
+const Login = lazy(() => import("@/pages/login"));
 
 const AppRouter = () => {
   const router = useRoutes([
@@ -20,6 +21,7 @@ const AppRouter = () => {
       children: [
         { path: "", element: <Home /> },
         { path: "/search", element: <Search /> },
+        { path: "/login", element: <Login /> },
         { path: "/movie", element: <Movie /> },
         { path: "/tickets", element: <Tickets /> },
 

@@ -2,8 +2,11 @@ import { LanguageSwitcher } from "@/features/language-switcher";
 import { ThemeChanger } from "@/features/theme";
 import { memo } from "react";
 import { RiLoginCircleFill } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 export const Option = memo(() => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex items-center gap-x-2 w-auto md:w-[292px]">
       <LanguageSwitcher />
@@ -12,6 +15,7 @@ export const Option = memo(() => {
       </div>
       <div>
         <RiLoginCircleFill
+          onClick={() => navigate("/login")}
           style={{
             width: "35px",
             height: "35px",
