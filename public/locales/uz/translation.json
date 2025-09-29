@@ -1,0 +1,91 @@
+{
+  "header": {
+    "nav": {
+      "main": "Bosh sahifa",
+      "movies": "Filmlar",
+      "saved": "Saqlanganlar",
+      "search": "Qidiruv",
+      "login": "Kirish"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "Biz haqimizda",
+      "publicOffer": "Ommaviy oferta",
+      "advertising": "Reklama",
+      "faq": "Savol-javob",
+      "contacts": "Aloqa"
+    },
+    "categories": {
+      "title": "Kategoriyalar",
+      "movies": "Filmlar",
+      "theater": "Teatr",
+      "concerts": "Konsertlar",
+      "sports": "Sport"
+    },
+    "contact": {
+      "title": "Biz bilan bog‘laning",
+      "phone": "+998 (91) 012-20-77",
+      "follow": "Ijtimoiy tarmoqlarda kuzating"
+    }
+  },
+  "search": {
+    "placeholder": "Filmlarni qidirish",
+    "noResults": "Hech qanday film topilmadi",
+    "startTyping": "Film qidirish uchun yozishni boshlang"
+  },
+  "watch": "Ko‘rish",
+  "movieSort": {
+    "placeholder": "Saralash tartibi",
+    "options": {
+      "popularityDesc": "Ommaboplik (yuqoridan pastga)",
+      "popularityAsc": "Ommaboplik (pastdan yuqoriga)",
+      "ratingDesc": "Reyting (yuqoridan pastga)",
+      "ratingAsc": "Reyting (pastdan yuqoriga)",
+      "voteCountDesc": "Ovozlar soni (ko‘pdan ozga)",
+      "voteCountAsc": "Ovozlar soni (ozdan ko‘pga)",
+      "releaseDateDesc": "Chiqarilgan sana (yangi–eski)",
+      "releaseDateAsc": "Chiqarilgan sana (eski–yangi)",
+      "revenueDesc": "Daromad (ko‘pdan ozga)",
+      "revenueAsc": "Daromad (ozdan ko‘pga)",
+      "titleAsc": "Nomi (A–Z)",
+      "titleDesc": "Nomi (Z–A)",
+      "originalTitleAsc": "Asl nomi (A–Z)",
+      "originalTitleDesc": "Asl nomi (Z–A)"
+    }
+  },
+  "movie_year_sort": {
+    "title": "Yillar oralig‘iga ko‘ra filtrlash"
+  },
+  "FilterGenre": "Janr bo‘yicha filtrlash",
+  "All": "Hammasi",
+
+  "genres": {
+    "28": "Jangari",
+    "12": "Sarguzasht",
+    "16": "Multfilm",
+    "35": "Komediya",
+    "80": "Jinoyat",
+    "99": "Hujjatli film",
+    "18": "Drama",
+    "10751": "Oila",
+    "14": "Fantastika",
+    "36": "Tarixiy",
+    "27": "Qo‘rqinchli",
+    "10402": "Musiqa",
+    "9648": "Detektiv",
+    "10749": "Romantika",
+    "878": "Ilmiy fantastika",
+    "10770": "Televizion film",
+    "53": "Triller",
+    "10752": "Urush",
+    "37": "Vesterн"
+  },
+
+  "bookmarks": {
+    "title": "Xatcho‘plar",
+    "empty": "Sizning xatcho‘plar ro‘yxatingiz bo‘sh",
+    "startAdding": "Filmlarni qo‘shib, bu yerda saqlashni boshlang",
+    "recommendations": "Sizga yoqishi mumkin bo‘lgan filmlar"
+  }
+}

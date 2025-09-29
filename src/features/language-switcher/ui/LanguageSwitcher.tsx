@@ -1,6 +1,7 @@
 import { Button, Dropdown, message, Space, type MenuProps } from "antd";
 import React, { memo, useState, type JSX } from "react";
 import { DownOutlined } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
 
 import rus_flag from "@/shared/assets/russian_flag.svg";
 import uzb_flag from "@/shared/assets/uzb_flag.svg";
@@ -15,32 +16,29 @@ interface LangItem {
 const items: MenuProps["items"] = [
   {
     label: "O'zbek",
-    key: "1",
+    key: "uz",
     icon: (
       <img src={uzb_flag} style={{ width: "20px", height: "20px" }} alt="" />
     ),
   },
   {
     label: "Русский",
-    key: "2",
+    key: "ru",
     icon: (
       <img src={rus_flag} style={{ width: "20px", height: "20px" }} alt="" />
     ),
   },
   {
     label: "English",
-    key: "3",
+    key: "en",
     icon: (
       <img src={usa_flag} style={{ width: "20px", height: "20px" }} alt="" />
     ),
   },
 ];
 
-const menuProps = {
-  items,
-};
-
 export const LanguageSwitcher: React.FC = memo(() => {
+  const { i18n } = useTranslation();
   const [language, setLang] = useState<LangItem>(items[0] as LangItem);
 
   const handleMenuClick: MenuProps["onClick"] = (e) => {
@@ -48,14 +46,17 @@ export const LanguageSwitcher: React.FC = memo(() => {
 
     if (clickedItem) {
       setLang(clickedItem as LangItem);
-      message.info(`Language switched to: ${clickedItem.key}`);
+      i18n.changeLanguage(e.key);
+      message.success(
+        `Language switched to: ${(clickedItem as LangItem).label}`
+      );
     }
   };
 
   return (
     <Dropdown
       menu={{
-        ...menuProps,
+        items,
         onClick: handleMenuClick,
         className: "custom-dropdown-menu",
       }}
