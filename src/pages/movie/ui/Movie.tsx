@@ -22,7 +22,9 @@ export const Movie = memo(() => {
   return (
     <div>
       <div className="container mb-[30px]">
-        <MovieSort />
+        <div>
+          <MovieSort />
+        </div>
       </div>
       <MovieList movies={data?.results} />
       <MoviePagination page={page} total_pages={data?.total_pages} />

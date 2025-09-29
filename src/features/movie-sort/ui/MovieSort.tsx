@@ -11,7 +11,7 @@ export const MovieSort = memo(() => {
   const { getMovieGenre } = useMovie();
 
   const sort_by = searchParams.get("sort") ?? "popularity.desc";
-  const with_genres = searchParams.get("genres") ?? "Animation";
+  const with_genres = searchParams.get("genres") ?? "16";
   const fromDate = searchParams.get("from") ?? "";
   const toDate = searchParams.get("to") ?? "";
 
@@ -49,9 +49,15 @@ export const MovieSort = memo(() => {
   };
 
   return (
-    <div className="flex flex-wrap gap-3 md:gap-4 w-full">
+    <div
+      className="
+        grid gap-4 mt-6
+        grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+        
+      "
+    >
       <Select
-        className="w-full sm:w-[48%] md:w-[200px]"
+        className="selectClass "
         placeholder="Sort by"
         value={sort_by}
         onChange={handleSortChange}
@@ -59,9 +65,9 @@ export const MovieSort = memo(() => {
       />
 
       <Select
-        className="w-full sm:w-[48%] md:w-[220px]"
+        className="selectClass "
         placeholder="Select a genre"
-        value={with_genres || "Action"}
+        value={with_genres}
         onChange={handleGenreChange}
         options={genreData?.genres?.map((g: any) => ({
           value: g.id.toString(),
@@ -72,12 +78,12 @@ export const MovieSort = memo(() => {
       <RangePicker
         value={fromDate && toDate ? [dayjs(fromDate), dayjs(toDate)] : null}
         onChange={handleDateChange}
-        className="w-full sm:w-[65%] md:w-[280px]"
+        className="selectClass "
       />
 
       <Button
         onClick={() => handleDateChange(null)}
-        className="w-full sm:w-[30%] md:w-[120px]"
+        className="selectClass btn"
       >
         Reset Dates
       </Button>

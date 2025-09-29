@@ -70,7 +70,7 @@ export const Navigation = memo(() => {
 
       <li>
         <NavLink
-          to={"/tickets"}
+          to={"/saved"}
           className={({ isActive }) =>
             `flex flex-col items-center ${
               isActive ? "text-[#C61F1F]" : "text-[#A1A1A1]"
@@ -82,7 +82,7 @@ export const Navigation = memo(() => {
               <img
                 src={isActive ? ticketA : ticketD}
                 className="w-6 h-6 mb-1.5"
-                alt="Tickets"
+                alt="Saved"
               />
               <span className="text-xs md:text-base">
                 {t("header.nav.saved")}

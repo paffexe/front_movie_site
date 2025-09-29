@@ -5,6 +5,7 @@ export const fetchMovies = async (params?: IMovieParams) => {
   const response = api.get("discover/movie", {
     params: {
       without_genres: "18,36,27,10402,10749",
+      with_genres: params?.with_genres || "16",
       ...params,
     },
   });
@@ -21,7 +22,7 @@ export const fetchMovieInfo = async (id: string, path: string) => {
   return response.data;
 };
 
-export const fetchMovieGenre = async ()=> {
-  const response = await api.get("/genre/movie/list")
-  return response.data
-}
+export const fetchMovieGenre = async () => {
+  const response = await api.get("/genre/movie/list");
+  return response.data;
+};
