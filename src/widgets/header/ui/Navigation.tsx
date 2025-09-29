@@ -13,7 +13,11 @@ import ticketD from "../assets/ticket_dis.svg";
 import searchA from "../assets/search_active.svg";
 import searchD from "../assets/search_dis.svg";
 
+import { useTranslation } from "react-i18next";
+
 export const Navigation = memo(() => {
+  const { t } = useTranslation();
+
   return (
     <ul className="flex gap-[38px] md:gap-[38px] justify-around md:justify-center py-2 md:py-0">
       <li>
@@ -32,11 +36,14 @@ export const Navigation = memo(() => {
                 className="w-6 h-6 mb-1.5"
                 alt="Showtime"
               />
-              <span className="text-xs md:text-base">Showtime</span>
+              <span className="text-xs md:text-base">
+                {t("header.nav.main")}
+              </span>
             </>
           )}
         </NavLink>
       </li>
+
       <li>
         <NavLink
           to={"/movie"}
@@ -51,13 +58,16 @@ export const Navigation = memo(() => {
               <img
                 src={isActive ? sessionA : sessionD}
                 className="w-6 h-6 mb-1.5"
-                alt="Session"
+                alt="Movies"
               />
-              <span className="text-xs md:text-base">Movies</span>
+              <span className="text-xs md:text-base">
+                {t("header.nav.movies")}
+              </span>
             </>
           )}
         </NavLink>
       </li>
+
       <li>
         <NavLink
           to={"/tickets"}
@@ -74,11 +84,14 @@ export const Navigation = memo(() => {
                 className="w-6 h-6 mb-1.5"
                 alt="Tickets"
               />
-              <span className="text-xs md:text-base">Tickets</span>
+              <span className="text-xs md:text-base">
+                {t("header.nav.saved")}
+              </span>
             </>
           )}
         </NavLink>
       </li>
+
       <li>
         <NavLink
           to={"/search"}
@@ -95,7 +108,9 @@ export const Navigation = memo(() => {
                 className="w-6 h-6 mb-1.5"
                 alt="Search"
               />
-              <span className="text-xs md:text-base">Search</span>
+              <span className="text-xs md:text-base">
+                {t("header.nav.search")}
+              </span>
             </>
           )}
         </NavLink>

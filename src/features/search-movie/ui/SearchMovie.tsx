@@ -3,12 +3,15 @@ import { useSearchMovie } from "../model/useSearchMovie";
 import { MovieList } from "@/widgets/movie-list";
 import { Empty, Input } from "antd";
 import useDebounce from "@/shared/hooks/useDebounce";
+import { useTranslation } from "react-i18next";
+
 
 export const SearchMovie = memo(() => {
   const [value, setValue] = useState("");
   const { getMovieBySearch } = useSearchMovie();
   const debounceValue = useDebounce(value, 800);
   const { data, isFetching } = getMovieBySearch({ query: debounceValue });
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-900 py-10">
@@ -17,7 +20,7 @@ export const SearchMovie = memo(() => {
           <Input
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            placeholder="Search for movies..."
+            placeholder={t("search.placeholder")}
             className="w-full md:w-1/2 rounded-lg shadow-sm focus:ring-2 focus:ring-red-500"
             size="large"
           />

@@ -49,9 +49,9 @@ export const MovieSort = memo(() => {
   };
 
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap gap-3 md:gap-4 w-full">
       <Select
-        className="selectClass select-small"
+        className="w-full sm:w-[48%] md:w-[200px]"
         placeholder="Sort by"
         value={sort_by}
         onChange={handleSortChange}
@@ -59,7 +59,7 @@ export const MovieSort = memo(() => {
       />
 
       <Select
-        className="selectClass select-large"
+        className="w-full sm:w-[48%] md:w-[220px]"
         placeholder="Select a genre"
         value={with_genres || "Action"}
         onChange={handleGenreChange}
@@ -72,9 +72,13 @@ export const MovieSort = memo(() => {
       <RangePicker
         value={fromDate && toDate ? [dayjs(fromDate), dayjs(toDate)] : null}
         onChange={handleDateChange}
-        className="selectClass"
+        className="w-full sm:w-[65%] md:w-[280px]"
       />
-      <Button onClick={() => handleDateChange(null)} className="selectClass btn">
+
+      <Button
+        onClick={() => handleDateChange(null)}
+        className="w-full sm:w-[30%] md:w-[120px]"
+      >
         Reset Dates
       </Button>
     </div>
