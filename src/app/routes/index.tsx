@@ -6,6 +6,7 @@ const Movie = lazy(() => import("@/pages/movie"));
 const Search = lazy(() => import("@/pages/search"));
 const Tickets = lazy(() => import("@/pages/tickets"));
 
+const CrewDetail = lazy(() => import("@/pages/crew-detail"));
 const MovieDetail = lazy(() => import("@/pages/movie-detail"));
 const Review = lazy(() => import("@/pages/movie-detail/reviews"));
 const Cast = lazy(() => import("@/pages/movie-detail/cast"));
@@ -31,6 +32,7 @@ const AppRouter = () => {
             { path: "crew", element: <Crew /> },
           ],
         },
+        { path: "/crew/:id", element: <CrewDetail /> },
       ],
     },
   ]);
